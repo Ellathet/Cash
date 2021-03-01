@@ -6,10 +6,12 @@ import styles from '../styles/pages/Home.module.css'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className={styles.container}>
-    <Menu/>
+    <>
+      <aside>
+        <Menu/>
+      </aside>
     <Component {...pageProps} />
-    </div>
+    </>
   )
 }
 
