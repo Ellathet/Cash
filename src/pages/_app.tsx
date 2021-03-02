@@ -1,18 +1,14 @@
+import { ThemeProvider } from 'styled-components'
+import GlobalStyle from '../styles/global'
+import theme from '../styles/theme'
 
-import { Menu } from '../components/Menu';
-import '../styles/global.css';
-
-import styles from '../styles/pages/Home.module.css'
-
-function MyApp({ Component, pageProps }) {
+export default function App({ Component, pageProps }) {
   return (
     <>
-      <aside>
-        <Menu/>
-      </aside>
-    <Component {...pageProps} />
+      <GlobalStyle />
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   )
 }
-
-export default MyApp
