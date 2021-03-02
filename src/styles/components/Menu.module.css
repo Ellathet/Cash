@@ -1,0 +1,40 @@
+.menu {
+    background: #fff;
+
+    width: 5rem;
+    height: 100vh;
+
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    border-bottom: 0.4rem solid var(--orange);
+}
+
+.logo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 20%;
+    margin-top: 1rem;
+}
+
+.logo:hover{
+    filter: brightness(1.2);
+    cursor: pointer;
+}
+
+.menuList {
+    display: flex;
+    height: 80%;
+}
+
+.menuList  li { 
+    list-style: none; 
+    margin-top: 3rem;
+
+}
+
+.menuList li:hover{
+    filter: brightness(0.9);
+    cursor: pointer;
+}
