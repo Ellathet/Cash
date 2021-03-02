@@ -5,14 +5,14 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 export function Menu() {
-
+/* 
     const router = useRouter();
     console.log(router.pathname)
 
     const routerIdentify = (router) => {
         if()
     }
-
+ */
 
     return (
     <nav className={styles.menu}>
