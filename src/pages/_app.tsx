@@ -1,4 +1,5 @@
 
+import { HeaderMenu } from '../components/HeadMenu';
 import { Menu } from '../components/Menu';
 import '../styles/global.css';
 
@@ -10,6 +11,11 @@ function MyApp({ Component, pageProps }) {
       <aside>
         <Menu/>
       </aside>
+      <main>
+        <header>
+          <HeaderMenu/>
+        </header>
+      </main>
     <Component {...pageProps} />
     </>
   )

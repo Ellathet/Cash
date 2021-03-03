@@ -1,4 +1,7 @@
 .menu {
+    position: fixed;
+    top: 0;
+
     background: #fff;
 
     width: 5rem;
@@ -8,6 +11,7 @@
     display: flex;
     align-items: center;
     border-bottom: 0.4rem solid var(--orange);
+
 }
 
 .logo {
@@ -16,6 +20,9 @@
     justify-content: center;
     height: 20%;
     margin-top: 1rem;
+
+    transition: filter 0.2s;
+
 }
 
 .logo:hover{
@@ -26,11 +33,18 @@
 .menuList {
     display: flex;
     height: 80%;
+
 }
 
 .menuList  li { 
     list-style: none; 
     margin-top: 3rem;
+
+    transition: filter 0.2s;
+}
+
+.menuList li svg {
+    transition: fill 2s;
 
 }
 
