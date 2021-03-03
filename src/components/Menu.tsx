@@ -12,7 +12,7 @@ export function Menu() {
     <nav className={styles.menu}>
         <div className={styles.logo}>
             <Link href="/">
-                <Image src="/logo.svg" height={60} width={60} alt="Logo"/>
+                <Image src="/icons/logo.svg" height={60} width={60} alt="Logo"/>
             </Link>
         </div>
 

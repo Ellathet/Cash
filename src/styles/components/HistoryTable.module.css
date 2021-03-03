@@ -1,0 +1,48 @@
+.table {
+    border-collapse: collapse;
+    border-spacing: 1px;
+    margin-top: 0.5rem;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+
+.table thead tr{
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.table tbody tr{
+    color: var(--white);
+    background: var(--green);
+    opacity: 60%;
+    transition: opacity 0.5s;
+
+    border-radius: 6px;
+}
+
+.table tbody tr:hover{
+    opacity: 1;
+}
+
+.table tbody th{
+    height: 2.5rem;
+    cursor: pointer;
+}
+
+.table tbody th:first-child{
+    height: inherit;
+    width: 2.5rem;
+}
+
+.table tbody th:last-child div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table tbody th:last-child div:hover path{
+    cursor: pointer;
+    fill: var(--red);
+}

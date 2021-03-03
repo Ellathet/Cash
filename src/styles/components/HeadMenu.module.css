@@ -19,12 +19,16 @@
 
     color: var(--white);
     font-weight: 700;
+
+    box-shadow: 0 14px 28px rgba(0,0,0,0.09), 0 10px 10px rgba(0,0,0,0.09);
+
 }
 
 .moneyBoxOff {
     
-    background: rgb(239,239,239);
-    background: linear-gradient(135deg, rgba(239,239,239,1) 0%, rgb(236, 236, 236) 100%);
+    background: linear-gradient(-45deg, #d8d8d8, #e7e7e7, #f7f5f5, #d4d4d4);
+    background-size: 400% 400%;
+    animation: gradient 25s ease infinite;
     padding: 0.3rem 0.5rem;
     border-radius: 14px;
     height: fit-content;
@@ -34,12 +38,27 @@
     text-align: center;
 
     font-weight: 700;
+
+    box-shadow: 0 14px 28px rgba(0,0,0,0.09), 0 10px 10px rgba(0,0,0,0.09);
+
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+    }
+
+.toggleBox:hover{
+    cursor: pointer;
 }
 
 .moneyBoxOff span{
     opacity: 0;
-}
-
-.visibility:hover {
-    cursor: pointer;
 }

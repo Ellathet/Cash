@@ -1,0 +1,54 @@
+.profileContainer {
+    display: flex;
+    align-items: center;
+
+    margin-left: -2.2rem;
+}
+
+.perfil {
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+}
+
+.profileContainer div strong {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--title);
+    margin-left: 1.5rem;
+}
+
+.config{
+
+    position: relative;
+    left: 5.8rem;
+    top: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background-color: var(--white);
+    padding: 6px;
+}
+
+.config:hover{
+    cursor: pointer;
+}
+
+.config svg path {
+
+    fill: none;
+}
+
+.config:hover svg {
+    transition: animation 1s;
+    animation:spin 4s linear infinite;
+} 
+
+.config:hover svg path{
+    fill: var(--orange);
+}
+
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

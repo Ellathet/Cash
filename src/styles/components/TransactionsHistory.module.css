@@ -1,0 +1,61 @@
+.container{
+    background: var(--white);
+    height: 100%;
+    width: 35rem;
+    border-radius: 6px;
+
+    box-shadow: 0 14px 28px rgba(0,0,0,0.09), 0 10px 10px rgba(0, 0, 0, 0.09);
+}
+
+.content{
+    padding: 1rem;
+}
+
+.content > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content > div > span {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    color: var(--title);
+    font-weight: 500;
+}
+
+.Filter {
+    background: var(--orange);
+    padding: 0.5rem;
+    border-radius: 1rem;
+    color: var(--white)
+}
+
+
+.VisibilityOff{
+    background: linear-gradient(-45deg, #d8d8d8, #e7e7e7, #f7f5f5, #d4d4d4);
+    background-size: 400% 400%;
+    animation: gradient 25s ease infinite;
+    height: 100%;
+    width: 35rem;
+    border-radius: 6px;
+
+    box-shadow: 0 14px 28px rgba(0,0,0,0.09), 0 10px 10px rgba(0,0,0,0.09);
+
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+    }
