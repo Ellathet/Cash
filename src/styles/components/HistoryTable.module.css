@@ -1,48 +1,62 @@
 .table {
-    border-collapse: collapse;
-    border-spacing: 1px;
-    margin-top: 0.5rem;
-    width: 100%;
-    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-
-.table thead tr{
-    color: var(--text);
-    text-decoration: none;
+.table header {
+    margin-left: -0.4rem;
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5.5rem;
+    font-size: 1.05rem;
     font-weight: 500;
+    margin-bottom: 0.5rem;
 }
 
-.table tbody tr{
+
+.table > div {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.8rem;
+    width: 100%;
+    min-height: 3rem;
+    background-color: var(--green);
+    opacity: 70%;
+    padding: 0.5rem;
+    border-radius: 1rem;
     color: var(--white);
-    background: var(--green);
-    opacity: 60%;
+
     transition: opacity 0.5s;
-
-    border-radius: 6px;
 }
 
-.table tbody tr:hover{
-    opacity: 1;
-}
-
-.table tbody th{
-    height: 2.5rem;
+.table > div:hover {
+    opacity: 100%;
     cursor: pointer;
 }
 
-.table tbody th:first-child{
-    height: inherit;
-    width: 2.5rem;
-}
-
-.table tbody th:last-child div{
+.table > div > div {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.table tbody th:last-child div:hover path{
-    cursor: pointer;
-    fill: var(--red);
+.table > div > div svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: fill 0.2s;
+}
+
+.table > div > div:last-child:hover svg path {
+    fill: var(--dark-red);
+}
+
+.subType:hover{
+    fill: var(--white);
+    filter: brightness(0.9);
 }

@@ -1,4 +1,5 @@
 
+import { AddModal } from '../components/AddModal';
 import { HeaderMenu } from '../components/HeadMenu';
 import { Menu } from '../components/Menu';
 import { VisibilityProvider } from '../contexts/VisibilityContext';
@@ -9,6 +10,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
     <VisibilityProvider>
+    <AddModal/>
       <aside>
           <Menu/>
         </aside>

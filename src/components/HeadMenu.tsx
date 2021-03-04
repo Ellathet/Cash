@@ -29,7 +29,7 @@ export function HeaderMenu() {
     return (
         <div className={styles.HeadMenu}>
             <Image src="/icons/bell.svg" alt="Sino de Notificação" width="24" height="24"/>
-            <Image src="/icons/plus.svg" alt="Adicionar" width="24" height="24"/>
+            <Image src="/icons/plus.svg" alt="Adicionar" width="24" height="24"className={styles.add}/>
             <div className={VisibilityToggle(visibility).classStyle}> 
                 <span>R$100</span> 
             </div>

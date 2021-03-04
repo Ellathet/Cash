@@ -43,6 +43,11 @@
 
 }
 
+.add:hover{
+    filter: brightness(130%);
+    cursor: pointer;
+}
+
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
