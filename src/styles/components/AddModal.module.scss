@@ -1,0 +1,182 @@
+.overlay {
+    background: rgba(242,243,245, 0.8);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: into 0.3s ease-in-out;
+}
+
+.srOnly {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:  rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.modal {
+    background: var(--white);
+    border-radius: 1rem;
+
+    padding: 1rem;
+    
+    height: 40%;
+    min-height: 20rem;
+    width: 30%;
+    min-width: 30rem;
+
+    animation: into 0.5s ease-in-out;
+}
+
+@keyframes into { 
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+.title {   
+    display: flex;
+
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    
+    gap: 0.5rem;
+}
+
+.overlay > div span:first-child p {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1.5rem 1rem 1rem;
+}
+
+.content input, .date select{
+    background: var(--background);
+
+    border: solid 1px var(--text);
+    border-radius: 1rem;
+
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    width: 100%;
+    height: 2.5rem;
+}
+
+.date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.5rem;
+
+    width: 100%;
+}
+
+.date select, .date input {
+    width: 50%;
+}
+
+.date input { 
+    color: var(--text);
+}
+
+.TransactionType {
+    color: var(--text);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.TransactionType option {
+    background: var(--background);
+}
+
+.value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    width: 100%;
+}
+
+.value span {
+    position: relative;
+
+    top: -0.185rem;
+
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text);
+}
+
+.buttons{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.buttons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px;
+    width: 8rem;
+    height: 2.5rem;
+    margin-top: 0.5rem;
+
+    border: 0;
+    border-radius: 7px;
+
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1rem;
+
+    transition: filter 0.5s ease;
+    transition: background-color 1s ease;
+}
+
+.buttons button:first-child {
+    background-color: var(--green);
+}
+
+.buttons button:last-child {
+    color: var(--red);
+    background-color: var(--white);
+    border: solid 2px var(--red); 
+}
+
+.buttons button:hover {
+    filter: brightness(0.9);
+}
+
+.buttons button:last-child:hover{
+    color: var(--white);
+    background-color: var(--red);
+} 
+
+
+
