@@ -6,27 +6,11 @@ import styles  from "../styles/components/AddModal.module.scss";
 
 export function AddModal() {
       
-    const { toggleModalAdd } = useContext(AddTransactionContext) 
-
-    interface TransactionModel {
-        name: string;
-        date: Date;
-        type: boolean;
-        value: number;
-    }
+    const { toggleModalAdd, AddTransaction } = useContext(AddTransactionContext)  
 
     const addTransaction = event => {
-        event.preventDefault();
-
-        const transaction: TransactionModel = {
-            name: event.target.name.value,
-            date: event.target.date.value,
-            type: event.target.type.value,
-            value: event.target.value.value,
-        }
-        console.log(transaction)
-
-        return transaction
+        event.preventDefault(); 
+        AddTransaction(event.target)
     }
 
     return (
@@ -56,11 +40,11 @@ export function AddModal() {
                     {/* Valor */}
                         <div className={styles.value}>
                             <label htmlFor="value" className={styles.srOnly}>Valor da Transação</label>
-                            <span> R$ </span> <input type="number"placeholder="Valor" name="value"/>
+                            <span> R$ </span> <input type="number"placeholder="Valor" name="value" step="0.01" min="0.01"/>
                         </div>
                     {/* Buttons */}
                     <div className={styles.buttons}>
-                        <button type="submit" onClick={toggleModalAdd}>Enviar</button>
+                        <button /* type="submit" onClick={toggleModalAdd} */>Enviar</button>
                         <button onClick={toggleModalAdd}>Cancelar</button>
                     </div>
                 </form>

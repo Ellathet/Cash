@@ -1,8 +1,10 @@
 import { useContext } from 'react';
+import { AddTransactionContext } from '../contexts/AddTransactionContext';
 import styles from '../styles/components/Profile.module.css';
 
 export function Profile(){
 
+    const { toggleModalAdd } = useContext(AddTransactionContext) 
     /* const { level } = useContext(ChallengesContext) */
 
     return (

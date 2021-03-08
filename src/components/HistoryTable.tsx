@@ -1,29 +1,22 @@
+import { useContext } from 'react'
+import { AddTransactionContext } from '../contexts/AddTransactionContext'
 import styles from '../styles/components/HistoryTable.module.css'
 
-export function HistoryTable(props) {
 
-    interface TransactionData {
-        name: string;
-        value: number;
-        date: string;
-        transactionType: boolean;
-        auto: boolean;
+export function HistoryTable(props) { 
+
+    const { Transactions, setTransaction} = useContext(AddTransactionContext) 
+
+    function DeleteTransaction (index ) {
+        const transaction = Transactions.splice(1, index)
+        console.log(transaction)
+        setTransaction(transaction)
     }
 
-    const Transactions = [ 
-        {
-            name: "Luz",
-            value: -500,
-            date: "12/02/2021",
-            transactionType: false,
-            auto: true
-        },
-        {
-            name: "Salário",
-            value: 1500,
-            date: "10/02/2021"
-        }
-    ]
+    const formatter = new Intl.NumberFormat('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+    })
 
     return (
         <div className={styles.table}>
@@ -32,9 +25,9 @@ export function HistoryTable(props) {
                 <span>VALOR</span>
                 <span>DATA</span>
             </header>
-                {Transactions.map((transaction: TransactionData) => {
+                {Transactions.map((transaction, index) => {
             return (
-            <div style={transaction.transactionType === false ? {background: "var(--red)"}: null}>
+            <div style={transaction.type === false ? {background: "var(--red)"}: null}>
                 <div>
                     {transaction.auto === true ? (
                         <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 16.546 36.649">
@@ -46,9 +39,9 @@ export function HistoryTable(props) {
                     ): ( null )}
                     </div>
                         <span>{transaction.name}</span>
-                        <span>R$ {transaction.value}</span>
+                        <span>{formatter.format(transaction.value/100)}</span>
                         <span>{ transaction.date}</span>
-                    <div>
+                    <div onClick={() => DeleteTransaction(index)}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="25.688" height="25.688" viewBox="0 0 25.688 25.688">
                             <g id="Icon_ionic-ios-close-circle-outline" data-name="Icon ionic-ios-close-circle-outline" transform="translate(-3.375 -3.375)">
                             <path id="Caminho_15" 

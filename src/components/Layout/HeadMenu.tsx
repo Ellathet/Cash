@@ -1,10 +1,10 @@
-import styles from '../styles/components/HeadMenu.module.css';
+import styles from '../../styles/components/HeadMenu.module.css';
 
 import Image from "next/image";
 import { useContext, useState } from 'react';
 
-import { VisibilityContext } from "../contexts/VisibilityContext"
-import { AddTransactionContext } from '../contexts/AddTransactionContext';
+import { VisibilityContext } from "../../contexts/VisibilityContext"
+import { AddTransactionContext } from '../../contexts/AddTransactionContext';
 
 export function HeaderMenu() {
 
@@ -33,7 +33,7 @@ export function HeaderMenu() {
             <Image src="/icons/bell.svg" alt="Sino de Notificação" width="24" height="24"/>
             <Image src="/icons/plus.svg" alt="Adicionar" width="24" height="24"className={styles.add} onClick={toggleModalAdd}/>
             <div className={VisibilityToggle(visibility).classStyle}> 
-                <span>R$100</span> 
+                <span>R$ 0</span> 
             </div>
                 <div className={styles.toggleBox}>
                     <Image src={VisibilityToggle(visibility).src} alt={VisibilityToggle(visibility).alt} width="24" height="24"  onClick={toggle}/>

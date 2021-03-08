@@ -8,7 +8,7 @@ import { VisibilityContext } from "../contexts/VisibilityContext"
 import { useContext } from 'react';
 import { HistoryTable } from './HistoryTable';
 
-export function TransacionsHistory() {
+export function TransactionsHistory() {
 
     const { visibility } = useContext(VisibilityContext) 
 
@@ -20,7 +20,7 @@ export function TransacionsHistory() {
                     <div>
                     <span>
                         <Image src="/icons/history.svg" width="25" height="25" className={styles.historyIcon}/>
-                        Historico de Transações
+                        Histórico de Transações
                     </span>
                     <select name="" id=""></select>
                     </div>

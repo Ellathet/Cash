@@ -5,7 +5,8 @@ import React from 'react';
 import { Profile } from '../components/Profile';
 import { CompletedGoals } from '../components/CompletedGoals';
 import {GoalsProfile } from '../components/GoalsProfile';
-import { TransacionsHistory } from '../components/TransactionsHistory';
+import { TransactionsHistory } from '../components/TransactionsHistory';
+import { Layout } from '../components/Layout';
 
 export default function Home () {
   return (
@@ -13,8 +14,8 @@ export default function Home () {
         <Head>
           <title>Início | Cash</title>
         </Head>
-
-    <main className={styles.MainContainer}>
+      <Layout>
+      <main className={styles.MainContainer}>
       <div>
         <div>
           <Profile/>
@@ -22,11 +23,11 @@ export default function Home () {
           <GoalsProfile/>
         </div>
         <div>
-          <TransacionsHistory/>
+          <TransactionsHistory/>
         </div>
       </div>
     </main>
-
+      </Layout>
     </>
   )
 }
