@@ -5,12 +5,12 @@ import styles from '../styles/components/HistoryTable.module.css'
 
 export function HistoryTable(props) { 
 
-    const { Transactions, setTransaction} = useContext(AddTransactionContext) 
+    const { Transactions, setTransactions} = useContext(AddTransactionContext) 
 
-    function DeleteTransaction (index ) {
-        const transaction = Transactions.splice(1, index)
-        console.log(transaction)
-        setTransaction(transaction)
+    function DeleteTransaction (index) {
+
+        let arr = Transactions.splice(1,index)
+        setTransactions(arr)
     }
 
     const formatter = new Intl.NumberFormat('pt-BR', {

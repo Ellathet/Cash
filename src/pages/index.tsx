@@ -7,6 +7,7 @@ import { CompletedGoals } from '../components/CompletedGoals';
 import {GoalsProfile } from '../components/GoalsProfile';
 import { TransactionsHistory } from '../components/TransactionsHistory';
 import { Layout } from '../components/Layout';
+import { SettingsProvider } from '../contexts/SettingsContext';
 
 export default function Home () {
   return (
@@ -14,6 +15,7 @@ export default function Home () {
         <Head>
           <title>Início | Cash</title>
         </Head>
+      <SettingsProvider>
       <Layout>
       <main className={styles.MainContainer}>
       <div>
@@ -28,6 +30,7 @@ export default function Home () {
       </div>
     </main>
       </Layout>
+      </SettingsProvider>
     </>
   )
 }

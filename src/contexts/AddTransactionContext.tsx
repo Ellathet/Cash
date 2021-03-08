@@ -13,7 +13,7 @@ interface AddTransactionContextData {
     toggleModalAdd: () => void;
     AddTransaction: (transaction) => void;
     Transactions: any;
-    setTransaction: any;
+    setTransactions: any;
 }
 
 
@@ -26,7 +26,9 @@ export function AddTransactionProvider ({children,  ...rest}: AddTransactionProv
 
     const [ modalAdd, setModalAdd ] = useState(false);
 
-    const [ Transactions, setTransaction] = useState([])
+    const [ Transactions, setTransactions] = useState([{
+        
+    }])
 
     const toggleModalAdd = () => setModalAdd(!modalAdd); 
 
@@ -68,7 +70,7 @@ export function AddTransactionProvider ({children,  ...rest}: AddTransactionProv
         transaction = format(transaction)
         let arr = Transactions
         arr.push(transaction)
-        setTransaction(arr)
+        setTransactions(arr)
         toggleModalAdd()
     }
 
@@ -78,7 +80,7 @@ export function AddTransactionProvider ({children,  ...rest}: AddTransactionProv
             toggleModalAdd,
             AddTransaction,
             Transactions,
-            setTransaction,
+            setTransactions,
         }}>
             {children}
             { modalAdd && <AddModal/>}
