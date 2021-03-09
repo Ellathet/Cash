@@ -26,9 +26,7 @@ export function AddTransactionProvider ({children,  ...rest}: AddTransactionProv
 
     const [ modalAdd, setModalAdd ] = useState(false);
 
-    const [ Transactions, setTransactions] = useState([{
-        
-    }])
+    const [ Transactions, setTransactions] = useState([])
 
     const toggleModalAdd = () => setModalAdd(!modalAdd); 
 
