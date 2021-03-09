@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode, useState } from "react";
+import React, { createContext, ReactNode, useEffect, useState } from "react";
 import { AddModal } from "../components/AddModal";
 import Cookies from 'js-cookie'
 
@@ -21,14 +21,21 @@ export const AddTransactionContext = createContext({} as AddTransactionContextDa
 
 interface AddTransactionProviderProps {
     children: ReactNode;
+    transactions: any;
 }
 export function AddTransactionProvider ({children,  ...rest}: AddTransactionProviderProps) {
 
     const [ modalAdd, setModalAdd ] = useState(false);
 
-    const [ Transactions, setTransactions] = useState([])
+    const [ Transactions, setTransactions] = useState(rest.transactions ?? [])
 
     const toggleModalAdd = () => setModalAdd(!modalAdd); 
+
+    useEffect(()=> {
+        localStorage.setItem('transactions', JSON.stringify(Transactions))
+    },[Transactions])
+
+    console.log(Transactions)
 
     function formatDate(date) {
         date = date.split("-")
