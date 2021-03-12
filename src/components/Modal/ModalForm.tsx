@@ -1,12 +1,9 @@
 import Image from "next/image";
 import { useContext } from "react";
-import { AddTransactionContext } from "../contexts/AddTransactionContext";
 
-import styles  from "../styles/components/AddModal.module.scss";
+export function ModalForm() {
 
-export function AddModal() {
-      
-    const { toggleModalAdd, AddTransaction } = useContext(AddTransactionContext)  
+    const { toggleModalAdd, AddTransaction, Err, setErr, Confirm, setConfirm } = useContext(AddTransactionContext)  
 
     const addTransaction = event => {
         event.preventDefault(); 
@@ -14,22 +11,18 @@ export function AddModal() {
     }
 
     return (
-        <div className={styles.overlay}>
-            {/* Content */}
-            <div className={styles.modal}>
-                {/* Title */}
+        <div className={styles.modal}>
                 <span className={styles.title}>
                     <Image src="/icons/transaction.svg" width="20" height="20"/>
-                    <p>Nova Transação</p>
+                     <p>Nova Transação</p>
                 </span>
-                {/* Form */}
                 <form onSubmit={addTransaction} className={styles.content}>
                     <label htmlFor="name" className={styles.srOnly}>Nome da Transação</label>
                     <input type="text" id="name" name="name" maxLength={11} placeholder="Nome da Transação"/>
                     {/* Date */}
                     <div className={styles.date}>
                         <label htmlFor="date" className={styles.srOnly}>Data da Transação</label>
-                        <input type="date" id="date" name="date"/>
+                        <input type="date" id="date" name="date" min='2010-01-01' max='2030-12-31'/>
 
                         <label htmlFor="type" className={styles.srOnly}>Tipo da Transação</label>
                         <select name="type" id="" className={styles.TransactionType}>
@@ -44,11 +37,10 @@ export function AddModal() {
                         </div>
                     {/* Buttons */}
                     <div className={styles.buttons}>
-                        <button /* type="submit" onClick={toggleModalAdd} */>Enviar</button>
+                        <button>Enviar</button>
                         <button onClick={toggleModalAdd}>Cancelar</button>
                     </div>
                 </form>
-            </div>
-        </div>
+                </div>
     )
 }

@@ -1,11 +1,15 @@
 import React, { createContext, ReactNode, useEffect, useState } from "react";
-import { AddModal } from "../components/AddModal";
+import { AddModal } from "../components/Modal/AddModal";
 interface AddTransactionContextData {
     modalAdd: boolean;
     toggleModalAdd: () => void;
     AddTransaction: (transaction) => void;
     Transactions: any;
     setTransactions: any;
+    Err: boolean;
+    setErr: (boolean) => void;
+    Confirm: boolean;
+    setConfirm: (boolean) => void;
 }
 
 
@@ -20,8 +24,13 @@ export function AddTransactionProvider ({children,  ...rest}: AddTransactionProv
     const [ modalAdd, setModalAdd ] = useState(false);
 
     const [ Transactions, setTransactions] = useState([])
+    const [ Err, setErr] = useState(true)
+    const [ Confirm, setConfirm] = useState(false)
 
-    const toggleModalAdd = () => setModalAdd(!modalAdd); 
+    function toggleModalAdd () {
+        setModalAdd(!modalAdd) 
+        setErr(false)
+    }
 
     const Format = {
 
@@ -59,11 +68,24 @@ export function AddTransactionProvider ({children,  ...rest}: AddTransactionProv
         },
     }
 
+    const ConfirmFields = (transaction) => {
+        if(transaction.name.value.trim() === "" || transaction.date.value.trim() === "" || transaction.value.value.trim() === ""){
+            throw new Error("Por favor, preencha todos os campos")
+        }
+    } 
+
     async function AddTransaction (transaction) {
-        transaction = Format.format(transaction)
-        Transactions.push(transaction)
-        setTransactions(Transactions)
-        toggleModalAdd()
+        try{
+            ConfirmFields(transaction)
+            transaction = Format.format(transaction)
+            Transactions.push(transaction)
+            setTransactions(Transactions)
+            setErr(true)
+            setConfirm(true)
+        } catch(error) {
+            setErr(false)
+        }
+
     }
 
     return (
@@ -73,6 +95,10 @@ export function AddTransactionProvider ({children,  ...rest}: AddTransactionProv
             AddTransaction,
             Transactions,
             setTransactions,
+            Err,
+            setErr,
+            Confirm,
+            setConfirm,
         }}>
             {children}
             { modalAdd && <AddModal/>}
