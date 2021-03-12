@@ -7,6 +7,7 @@ export function HistoryTable(props) {
 
     const { Transactions, setTransactions} = useContext(AddTransactionContext) 
 
+
     function DeleteTransaction (index) {
 
         let arr = Transactions.splice(1,index)
@@ -25,7 +26,7 @@ export function HistoryTable(props) {
                 <span>VALOR</span>
                 <span>DATA</span>
             </header>
-                {/* {Transactions.map((transaction, index) => {
+            {Transactions.map((transaction, index) => {
             return (
             <div style={transaction.type === false ? {background: "var(--red)"}: null}>
                 <div>
@@ -56,7 +57,7 @@ export function HistoryTable(props) {
                         </div>
                     </div>
             )
-        })}  */}
+        })}  
             </div>
     )
 }

@@ -31,51 +31,51 @@ export function AddTransactionProvider ({children,  ...rest}: AddTransactionProv
 
     const toggleModalAdd = () => setModalAdd(!modalAdd); 
 
+    const Format = {
+
+        formatDate: (date) => {
+            date = date.split("-")
+    
+            return `${date[2]}/${date[1]}/${date[0]}`
+        },
+    
+        formatType: (type) => {
+            if(type == "true") {
+                return true
+            }else if( type == "false") {
+                return false
+            }
+        },
+    
+        formatValue: (value, type) => {
+            value = Number(value) * 100
+            value = type === false ? value * -1 : value
+    
+            return value
+        },
+    
+        format: (transaction) => {
+            const type = Format.formatType(transaction.type.value)
+    
+            return {
+                name: transaction.name.value,
+                date: Format.formatDate(transaction.date.value),
+                type: type,
+                value: Format.formatValue(transaction.value.value, type),
+                auto: false
+            } 
+        },
+    }
+
     useEffect(()=> {
-        localStorage.setItem('transactions', JSON.stringify(Transactions))
+        let stringify = JSON.stringify(Transactions) 
+        Cookies.set('transactions', `${stringify}`)
     },[Transactions])
 
-    console.log(Transactions)
-
-    function formatDate(date) {
-        date = date.split("-")
-
-        return `${date[2]}/${date[1]}/${date[0]}`
-    }
-
-    function formatType(type) {
-        if(type == "true") {
-            return true
-        }else if( type == "false") {
-            return false
-        }
-    }
-
-    function formatValue(value, type){
-        value = Number(value) * 100
-        value = type === false ? value * -1 : value
-
-        return value
-    }
-
-    function format (transaction) {
-        const type = formatType(transaction.type.value)
-
-        return {
-            name: transaction.name.value,
-            date: formatDate(transaction.date.value),
-            type: type,
-            value: formatValue(transaction.value.value, type),
-            auto: false
-        } 
-    } 
-
-
     async function AddTransaction (transaction) {
-        transaction = format(transaction)
-        let arr = Transactions
-        arr.push(transaction)
-        setTransactions(arr)
+        transaction = Format.format(transaction)
+        Transactions.push(transaction)
+        setTransactions(Transactions)
         toggleModalAdd()
     }
 

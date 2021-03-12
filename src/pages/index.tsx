@@ -46,10 +46,12 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   
   const { transactions } = ctx.req.cookies;
   
-  return {
-    props: {
-      transactions: transactions,
-    }
-  }
-}
 
+    return {
+      props: {
+        transactions: JSON.parse(transactions),
+      }
+    }
+
+
+}
