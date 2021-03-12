@@ -41,17 +41,3 @@ export default function Home (props) {
     </>
   )
 }
-
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  
-  const { transactions } = ctx.req.cookies;
-  
-
-    return {
-      props: {
-        transactions: JSON.parse(transactions),
-      }
-    }
-
-
-}
