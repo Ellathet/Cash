@@ -1,0 +1,304 @@
+.overlay {
+  background: rgba(242, 243, 245, 0.8);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: into 0.3s ease-in-out;
+          animation: into 0.3s ease-in-out;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.modal {
+  background: var(--white);
+  border-radius: 1rem;
+  padding: 1rem;
+  height: auto;
+  min-height: 20rem;
+  width: 30%;
+  min-width: 30rem;
+  -webkit-animation: into 0.5s ease-in-out;
+          animation: into 0.5s ease-in-out;
+}
+
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  gap: 0.5rem;
+}
+
+.overlay > div span:first-child p {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.5rem 1rem 1rem;
+}
+
+.content input, .date select {
+  background: var(--background);
+  border: solid 1px var(--text);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  height: 2.5rem;
+}
+
+.date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.date select, .date input {
+  width: 50%;
+}
+
+.date input {
+  color: var(--text);
+}
+
+.TransactionType {
+  color: var(--text);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.TransactionType option {
+  background: var(--background);
+}
+
+.value {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.value span {
+  position: relative;
+  top: -0.185rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.buttons button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
+  width: 8rem;
+  height: 2.5rem;
+  margin-top: 0.5rem;
+  border: 0;
+  border-radius: 7px;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1rem;
+  -webkit-transition: -webkit-filter 0.5s ease;
+  transition: -webkit-filter 0.5s ease;
+  transition: filter 0.5s ease;
+  transition: filter 0.5s ease, -webkit-filter 0.5s ease;
+  -webkit-transition: background-color 1s ease;
+  transition: background-color 1s ease;
+}
+
+.buttons button:first-child {
+  background-color: var(--green);
+}
+
+.buttons button:last-child {
+  color: var(--red);
+  background-color: var(--white);
+  border: solid 2px var(--red);
+}
+
+.buttons button:hover {
+  -webkit-filter: brightness(0.9);
+          filter: brightness(0.9);
+}
+
+.buttons button:last-child:hover {
+  color: var(--white);
+  background-color: var(--red);
+}
+
+.cancel {
+  font-weight: 700;
+  font-size: 1rem;
+  width: 20rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--red);
+  border: 4px solid var(--white);
+  color: var(--white);
+}
+
+.cancel:hover {
+  color: var(--red);
+  background-color: var(--white);
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.content {
+  margin-top: 0;
+}
+
+.content div:first-child svg {
+  width: 10rem;
+  height: 11rem;
+  display: block;
+  margin: -1.5rem auto 1rem;
+}
+
+.content div:first-child p {
+  color: var(--white);
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+}
+
+.path.circle {
+  -webkit-animation: dash .9s ease-in-out;
+  animation: dash .9s ease-in-out;
+}
+
+.path.line {
+  stroke-dashoffset: 1000;
+  -webkit-animation: dash .9s .35s ease-in-out forwards;
+  animation: dash .9s .35s ease-in-out forwards;
+}
+
+.path.check {
+  stroke-dashoffset: -100;
+  -webkit-animation: dash-check .9s .35s ease-in-out forwards;
+  animation: dash-check .9s .35s ease-in-out forwards;
+}
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+
+@keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+
+.success {
+  background-color: var(--green);
+}
+
+.error {
+  background-color: var(--red);
+}
+
+.successButton {
+  background-color: var(--green);
+}
+
+.successButton:hover {
+  color: var(--green);
+}
+/*# sourceMappingURL=AddModal.module.css.map */

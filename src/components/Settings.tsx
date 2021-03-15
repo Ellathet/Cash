@@ -16,9 +16,12 @@ export function Settings() {
             <div className={styles.modal}>
                 <div className={styles.content}>
                     <aside>
-                        <button onClick={() => setMenuTab("perfil")} className={`${styles.buttonStyle} ${MenuTab === "perfil" ? styles.activatedTab: null}`}>Perfil</button>
-                        <button onClick={() => setMenuTab("transactions")} className={`${styles.buttonStyle} ${MenuTab === "transactions" ? styles.activatedTab: null}`}>Transações</button>
-                        <button onClick={() => setMenuTab("storage")} className={`${styles.buttonStyle} ${MenuTab === "storage" ? styles.activatedTab: null}`}>Armazenamento</button>
+                        <button onClick={() => setMenuTab("perfil")} 
+                        className={`${styles.buttonStyle} ${MenuTab === "perfil" ? styles.activatedTab: null}`}>Perfil</button>
+                        <button onClick={() => setMenuTab("transactions")} 
+                        className={`${styles.buttonStyle} ${MenuTab === "transactions" ? styles.activatedTab: null}`}>Transações</button>
+                        <button onClick={() => setMenuTab("storage")} 
+                        className={`${styles.buttonStyle} ${MenuTab === "storage" ? styles.activatedTab: null}`}>Armazenamento</button>
                     </aside>
                     <main>
                         {MenuTab === "perfil" ? (
