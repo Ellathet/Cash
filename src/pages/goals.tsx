@@ -1,8 +1,12 @@
+import { Layout } from "../components/Layout";
+
 export default function Auto() {
     return (
-      <div>
-        <h1>Olá Auto</h1>
-      </div>
+      <Layout>
+        <div>
+          <h1>Olá Auto</h1>
+        </div>
+      </Layout>
     )
   }
   

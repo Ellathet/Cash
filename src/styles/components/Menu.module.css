@@ -2,10 +2,13 @@
     position: fixed;
     top: 0;
 
+    z-index: 1;
+    overflow-x: hidden;
+
     background: #fff;
 
     width: 5rem;
-    height: 100vh;
+    height: 100%;
 
     flex-direction: column;
     display: flex;

@@ -9,7 +9,7 @@ interface AddTransactionContextData {
     Err: boolean;
     setErr: (boolean) => void;
     Confirm: boolean;
-    setConfirm: (boolean) => void;
+    total: Number;
 }
 
 
@@ -26,10 +26,13 @@ export function AddTransactionProvider ({children,  ...rest}: AddTransactionProv
     const [ Transactions, setTransactions] = useState([])
     const [ Err, setErr] = useState(true)
     const [ Confirm, setConfirm] = useState(false)
+    const [ total, setTotal] = useState(0)
+
 
     function toggleModalAdd () {
         setModalAdd(!modalAdd) 
         setErr(false)
+        setConfirm(false)
     }
 
     const Format = {
@@ -68,6 +71,23 @@ export function AddTransactionProvider ({children,  ...rest}: AddTransactionProv
         },
     }
 
+    useEffect(()=> {
+        setTotal(totalTransactions())
+    }, [Transactions])
+
+    function totalTransactions() {
+        let total = 0;
+
+        Transactions.map(transactions => {
+            if(transactions.value < 0) {
+                total += transactions.value/100
+            }
+        })
+
+        return total
+
+    }
+
     const ConfirmFields = (transaction) => {
         if(transaction.name.value.trim() === "" || transaction.date.value.trim() === "" || transaction.value.value.trim() === ""){
             throw new Error("Por favor, preencha todos os campos")
@@ -80,10 +100,11 @@ export function AddTransactionProvider ({children,  ...rest}: AddTransactionProv
             transaction = Format.format(transaction)
             Transactions.push(transaction)
             setTransactions(Transactions)
-            setErr(true)
-            setConfirm(true)
-        } catch(error) {
             setErr(false)
+            setConfirm(true)
+            totalTransactions()
+        } catch(error) {
+            setErr(true)
         }
 
     }
@@ -98,7 +119,7 @@ export function AddTransactionProvider ({children,  ...rest}: AddTransactionProv
             Err,
             setErr,
             Confirm,
-            setConfirm,
+            total,
         }}>
             {children}
             { modalAdd && <AddModal/>}

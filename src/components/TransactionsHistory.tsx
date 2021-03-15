@@ -22,7 +22,7 @@ export function TransactionsHistory() {
                         <Image src="/icons/history.svg" width="25" height="25" className={styles.historyIcon}/>
                         Histórico de Transações
                     </span>
-                    <select name="" id=""></select>
+                    {/* <select name="" id=""></select> */}
                     </div>
                         <HistoryTable/>
                     </div>

@@ -1,9 +1,12 @@
 import Image from "next/image";
 import { useContext } from "react";
+import { AddTransactionContext } from "../../contexts/AddTransactionContext";
+import styles  from "../../styles/components/Modal/AddModal.module.scss";
+
 
 export function ModalForm() {
 
-    const { toggleModalAdd, AddTransaction, Err, setErr, Confirm, setConfirm } = useContext(AddTransactionContext)  
+    const { toggleModalAdd, AddTransaction } = useContext(AddTransactionContext)  
 
     const addTransaction = event => {
         event.preventDefault(); 

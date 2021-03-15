@@ -32,7 +32,7 @@
 
     padding: 1rem;
     
-    height: 40%;
+    height: auto;
     min-height: 20rem;
     width: 30%;
     min-width: 30rem;
@@ -128,7 +128,7 @@
     gap: 0.5rem;
 }
 
-.buttons button {
+.buttons button{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -168,22 +168,6 @@
     background-color: var(--red);
 } 
 
-.error {
-    background: var(--red);
-    border-radius: 1rem;
-
-    padding: 1rem;
-    
-    height: 40%;
-    min-height: 20rem;
-    width: 30%;
-    min-width: 30rem;
-
-    animation: into 0.5s ease-in-out;
-}
-
- 
-
 .cancel {
     font-weight: 700;
     font-size: 1rem;
@@ -201,12 +185,6 @@
     background-color: var(--white);
 
     transition: background-color 0.3s;
-}
-
-.error div {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
 }
 
 .content {
@@ -282,3 +260,18 @@
     }
   }
   
+.success {
+  background-color: var(--green);
+}
+
+.error {
+  background-color: var(--red);
+}
+
+.successButton {
+  background-color: var(--green)
+}
+
+.successButton:hover {
+  color: var(--green)
+}

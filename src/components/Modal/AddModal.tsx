@@ -1,16 +1,33 @@
-import Image from "next/image";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { AddTransactionContext } from "../../contexts/AddTransactionContext";
 
-import styles  from "../styles/components/Modal/AddModal.module.scss";
+import styles  from "../../styles/components/Modal/AddModal.module.scss";
+import { ModalError } from "./ModalError";
+import { ModalForm } from "./ModalForm";
+import { ModalSuccess } from "./ModalSuccess";
 
 export function AddModal() {
       
-    const { toggleModalAdd, AddTransaction, Err, setErr, Confirm, setConfirm } = useContext(AddTransactionContext)  
+    const { Err, Confirm } = useContext(AddTransactionContext)  
 
+    const modalController = () => {
+        if( Err === true ) {
+            return (
+                <ModalError/>
+            )
+        } else if (Confirm === true) {
+               return (
+               <ModalSuccess/>
+               )
+        } else {
+            return (
+                <ModalForm/>
+            )
+        }
+    }
     return (
         <div className={styles.overlay}>
-
+            {modalController()}
         </div>
     )
 }
