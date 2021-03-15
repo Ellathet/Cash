@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AddTransactionContext } from "../../contexts/TransactionContext";
-import styles  from "../../styles/components/Modal/AddModal.module.scss";
+import styles from "../../styles/components/Modal/AddModal.module.scss";
 
 
 export function ModalError() {
@@ -8,7 +8,7 @@ export function ModalError() {
     const { setErr } = useContext(AddTransactionContext)  
 
     return (
-        <div className={`${styles.modal} ${styles.error}`}>
+        <div className={`${styles.error} ${styles.modal}`}>
             <div className={styles.content}>
                 <div>
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
