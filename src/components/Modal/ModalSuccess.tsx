@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { AddTransactionContext } from "../../contexts/AddTransactionContext";
+import { AddTransactionContext } from "../../contexts/TransactionContext";
 import styles  from "../../styles/components/Modal/AddModal.module.scss";
 
 

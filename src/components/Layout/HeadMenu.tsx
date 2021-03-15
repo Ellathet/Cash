@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useContext, useState } from 'react';
 
 import { VisibilityContext } from "../../contexts/VisibilityContext"
-import { AddTransactionContext } from '../../contexts/AddTransactionContext';
+import { AddTransactionContext } from '../../contexts/TransactionContext';
 
 export function HeaderMenu() {
 

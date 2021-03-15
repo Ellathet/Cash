@@ -9,7 +9,7 @@ import {GoalsProfile } from '../components/GoalsProfile';
 import { TransactionsHistory } from '../components/TransactionsHistory';
 import { Layout } from '../components/Layout';
 import { SettingsProvider } from '../contexts/SettingsContext';
-import { AddTransactionProvider } from '../contexts/AddTransactionContext';
+import { AddTransactionProvider } from '../contexts/TransactionContext';
 
 
 export default function Home (props) {
