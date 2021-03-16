@@ -14,10 +14,13 @@ export function HeaderMenu() {
     function VisibilityToggle( visibility ) {
         
         if(visibility === true){
+
+        let classStyle = total < 0 ? styles.moneyBoxNegative: styles.moneyBox
+
             return{
                 src: "/icons/eye.svg",
                 alt: "Visualização Ativada",
-                classStyle: styles.moneyBox,
+                classStyle: classStyle,
             } 
         }else if(visibility === false){
             return{

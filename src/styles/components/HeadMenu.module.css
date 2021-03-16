@@ -43,6 +43,22 @@
 
 }
 
+.moneyBoxNegative {
+    background-color: var(--red);
+    padding: 0.3rem 0.5rem;
+    border-radius: 14px;
+    height: fit-content;
+    min-width: 7rem;
+    max-width: fit-content;
+
+    text-align: center;
+
+    color: var(--white);
+    font-weight: 700;
+
+    box-shadow: 0 14px 28px rgba(0,0,0,0.09), 0 10px 10px rgba(0,0,0,0.09);
+}
+
 .add:hover{
     filter: brightness(130%);
     cursor: pointer;
