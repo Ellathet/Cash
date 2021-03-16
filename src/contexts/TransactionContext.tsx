@@ -23,10 +23,10 @@ export function AddTransactionProvider ({children,  ...rest}: AddTransactionProv
 
     const [ modalAdd, setModalAdd ] = useState(false);
 
-    const [ Transactions, setTransactions] = useState([])
-    const [ Err, setErr] = useState(true)
-    const [ Confirm, setConfirm] = useState(false)
-    const [ total, setTotal] = useState(0)
+    const [ Transactions, setTransactions ] = useState([])
+    const [ Err, setErr ] = useState(true)
+    const [ Confirm, setConfirm ] = useState(false)
+    const [ total, setTotal ] = useState(0)
 
 
     function toggleModalAdd () {
@@ -71,22 +71,24 @@ export function AddTransactionProvider ({children,  ...rest}: AddTransactionProv
         },
     }
 
-    useEffect(()=> {
-        setTotal(totalTransactions())
-    }, [Transactions])
+
 
     function totalTransactions() {
         let total = 0;
 
         Transactions.map(transactions => {
-            if(transactions.value < 0) {
+                console.log(transactions.value)
                 total += transactions.value/100
-            }
         })
 
         return total
 
     }
+
+    useEffect(()=> {
+        setTotal(totalTransactions())
+    }, [Transactions, modalAdd])
+
 
     const ConfirmFields = (transaction) => {
         if(transaction.name.value.trim() === "" || transaction.date.value.trim() === "" || transaction.value.value.trim() === ""){

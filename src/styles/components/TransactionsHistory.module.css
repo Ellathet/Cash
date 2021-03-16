@@ -48,6 +48,58 @@
 
 }
 
+.next:hover{
+    cursor: pointer;
+}
+
+.nothing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 1rem 2rem 3rem;
+}
+
+.nothing svg {
+    position: relative;
+    left: -0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.nothing h2 {
+    font-size:1.8rem;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.nothing p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.nothing div:last-child {
+
+    background-color: var(--green);
+
+    color: var(--white);
+    font-weight: 600;
+
+    padding: 0.7rem;
+    border-radius: 0.5rem;
+
+    width: 15rem;
+
+    transition: filter 0.5s;
+}
+
+.nothing div:last-child:hover {
+    cursor: pointer;
+    filter: brightness(0.9);
+}
+
 @keyframes gradient {
     0% {
         background-position: 0% 50%;

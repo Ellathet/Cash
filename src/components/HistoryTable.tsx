@@ -21,9 +21,9 @@ export function HistoryTable(props) {
     return (
         <div className={styles.table}>
             <header>
-                <span>NOME</span>
-                <span>VALOR</span>
-                <span>DATA</span>
+                <span className={styles.name}>NOME</span>
+                <span className={styles.value}>VALOR</span>
+                <span className={styles.date}>DATA</span>
             </header>
             {Transactions.map((transaction, index) => {
             return (

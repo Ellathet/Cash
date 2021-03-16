@@ -15,6 +15,20 @@
     margin-bottom: 0.5rem;
 }
 
+.name {
+    position: relative;
+    left: -0.7rem;
+}
+
+.value {
+    position: relative;
+    left: -2.1rem;
+}
+
+.date {
+    position: relative;
+    left: -1.3rem;
+}
 
 .table > div {
     margin-bottom: 0.5rem;
@@ -60,3 +74,4 @@
     fill: var(--white);
     filter: brightness(0.9);
 }
+
