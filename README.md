@@ -7,7 +7,8 @@ A just app finance organization.
 - 📦 Add function
 - 🐞 Bug fix
 - 🔺 Update
-- 💫 Fix a litte mistake
+- 💫 Fix a little mistake
+- ⚙ Add Dev Functions
 
 ## How to run? 🚀
 ### With yarn
