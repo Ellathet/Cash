@@ -87,7 +87,7 @@ export function AddTransactionProvider ({children,  ...rest}: AddTransactionProv
 
     useEffect(()=> {
         setTotal(totalTransactions())
-    }, [Transactions, modalAdd])
+    }, [Transactions, modalAdd, Confirm])
 
 
     const ConfirmFields = (transaction) => {

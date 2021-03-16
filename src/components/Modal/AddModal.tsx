@@ -15,7 +15,7 @@ export function AddModal() {
             return (
                 <ModalError/>
             )
-        } else if (Confirm === true) {
+        } else if ( Confirm === true ) {
                return (
                <ModalSuccess/>
                )
