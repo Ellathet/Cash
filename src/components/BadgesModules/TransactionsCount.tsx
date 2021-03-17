@@ -4,7 +4,6 @@ import styles from '../../styles/components/Badges.module.css';
 
 export function TransactionsCount(){
 
-
     const { Transactions} = useContext(AddTransactionContext) 
 
     return (
