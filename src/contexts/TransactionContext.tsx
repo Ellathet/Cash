@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 import React, { createContext, ReactNode, useEffect, useState } from "react";
 import { AddModal } from "../components/Modal/AddModal";
 interface AddTransactionContextData {
@@ -23,10 +24,12 @@ export function AddTransactionProvider ({children,  ...rest}: AddTransactionProv
 
     const [ modalAdd, setModalAdd ] = useState(false);
 
-    const [ Transactions, setTransactions ] = useState([])
+    const [ Transactions, setTransactions ] = useState(rest.transactions)
     const [ Err, setErr ] = useState(true)
     const [ Confirm, setConfirm ] = useState(false)
     const [ total, setTotal ] = useState(0)
+
+    console.log(rest.transactions)
 
 
     function toggleModalAdd () {
@@ -71,8 +74,6 @@ export function AddTransactionProvider ({children,  ...rest}: AddTransactionProv
         },
     }
 
-
-
     function totalTransactions() {
         let total = 0;
 
@@ -87,6 +88,7 @@ export function AddTransactionProvider ({children,  ...rest}: AddTransactionProv
 
     useEffect(()=> {
         setTotal(totalTransactions())
+        Cookies.set( "transactions", JSON.stringify(Transactions))
     }, [Transactions, modalAdd, Confirm])
 
 

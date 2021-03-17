@@ -18,6 +18,7 @@ export function HistoryTable(props) {
         currency: 'BRL',
     })
 
+    let arr = JSON.parse(JSON.stringify(Transactions)) 
     return (
         <div className={styles.table}>
             <header>
@@ -25,7 +26,8 @@ export function HistoryTable(props) {
                 <span className={styles.value}>VALOR</span>
                 <span className={styles.date}>DATA</span>
             </header>
-            {Transactions.map((transaction, index) => {
+            
+            {arr.map((transaction, index) => {
             return (
             <div style={transaction.type === false ? {background: "var(--red)"}: null}>
             <div>

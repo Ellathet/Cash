@@ -11,7 +11,6 @@ import { Layout } from '../components/Layout';
 import { SettingsProvider } from '../contexts/SettingsContext';
 import { AddTransactionProvider } from '../contexts/TransactionContext';
 
-
 export default function Home (props) {
   return (
     <>
@@ -41,3 +40,16 @@ export default function Home (props) {
     </>
   )
 }
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  
+    const { transactions } = ctx.req.cookies;
+
+    const transactionsArr = transactions === undefined ? [] : JSON.parse(transactions)
+
+    return {
+      props: {
+        transactions: transactionsArr
+      }
+    }
+  }
