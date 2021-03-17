@@ -1,6 +1,6 @@
-import styles from '../styles/components/CompletedGoals.module.css';
+import styles from '../styles/components/Badges.module.css';
 
-export function CompletedGoals(){
+export function Badges(){
 
     return (
         <div className={styles.completedGoalsContainer}>

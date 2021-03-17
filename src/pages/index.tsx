@@ -4,7 +4,7 @@ import { GetServerSideProps } from "next";
 import Head from 'next/head'
 import React from 'react';
 import { Profile } from '../components/Profile';
-import { CompletedGoals } from '../components/CompletedGoals';
+import { Badges } from '../components/Badges';
 import {GoalsProfile } from '../components/GoalsProfile';
 import { TransactionsHistory } from '../components/TransactionsHistory';
 import { Layout } from '../components/Layout';
@@ -26,7 +26,7 @@ export default function Home (props) {
       <div>
         <div>
           <Profile/>
-          <CompletedGoals/>
+          <Badges/>
           <GoalsProfile/>
         </div>
         <div>
