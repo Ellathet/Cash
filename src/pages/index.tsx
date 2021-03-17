@@ -10,6 +10,7 @@ import { TransactionsHistory } from '../components/TransactionsHistory';
 import { Layout } from '../components/Layout';
 import { SettingsProvider } from '../contexts/SettingsContext';
 import { AddTransactionProvider } from '../contexts/TransactionContext';
+import { BadgesProvider } from '../contexts/BadgesContext'
 
 export default function Home (props) {
   return (
@@ -17,6 +18,9 @@ export default function Home (props) {
       <AddTransactionProvider
         transactions={props.transactions}
       >
+          <BadgesProvider
+          storageTransactionsTotal={props.storageTransactionsTotal}
+          >
         <Head>
           <title>Início | Cash</title>
         </Head>
@@ -36,6 +40,7 @@ export default function Home (props) {
     </main>
       </Layout>
       </SettingsProvider>
+      </BadgesProvider>
       </AddTransactionProvider>
     </>
   )
@@ -43,13 +48,15 @@ export default function Home (props) {
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   
-    const { transactions } = ctx.req.cookies;
+    const { transactions, storageTransactionsTotal } = ctx.req.cookies;
 
     const transactionsArr = transactions === undefined ? [] : JSON.parse(transactions)
+    const storageTransactionsTotalArr = storageTransactionsTotal === undefined ? 0 : Number(storageTransactionsTotal)
 
     return {
       props: {
-        transactions: transactionsArr
+        transactions: transactionsArr,
+        storageTransactionsTotal: storageTransactionsTotalArr
       }
     }
   }

@@ -29,7 +29,6 @@ export function AddTransactionProvider ({children,  ...rest}: AddTransactionProv
     const [ Confirm, setConfirm ] = useState(false)
     const [ total, setTotal ] = useState(0)
 
-    console.log(rest.transactions)
 
 
     function toggleModalAdd () {
@@ -78,7 +77,6 @@ export function AddTransactionProvider ({children,  ...rest}: AddTransactionProv
         let total = 0;
 
         Transactions.map(transactions => {
-                console.log(transactions.value)
                 total += transactions.value/100
         })
 
