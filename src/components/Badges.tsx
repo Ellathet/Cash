@@ -1,15 +1,9 @@
-import { useContext } from 'react';
-import { AddTransactionContext } from '../contexts/TransactionContext';
+import { SettingsContext } from '../contexts/SettingsContext'
 import { TransactionsCount } from './BadgesModules/TransactionsCount';
 
 export function Badges(){
-
-    const { Transactions } = useContext(AddTransactionContext) 
-
-    Transactions.length
-
-
+    
     return (
         <TransactionsCount/>
     )
-}
+} 

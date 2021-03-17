@@ -1,11 +1,11 @@
 import { useContext } from 'react';
-import { BadgesContext } from '../../contexts/BadgesContext';
+import { AddTransactionContext } from '../../contexts/TransactionContext';
 import styles from '../../styles/components/Badges.module.css';
 
 export function TransactionsCount(){
 
 
-    const { transactionsTotal } = useContext(BadgesContext) 
+    const { Transactions} = useContext(AddTransactionContext) 
 
     return (
         <div className={styles.completedGoalsContainer}>
@@ -13,7 +13,7 @@ export function TransactionsCount(){
                 <img src="/icons/star.svg" alt="Metas Completas"/>
                 <span>Transações Feitas</span>
             </span>
-            <span>{transactionsTotal}</span>
+            <span>{Transactions.length}</span>
         </div>
     )
 }

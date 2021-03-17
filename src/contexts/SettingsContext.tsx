@@ -6,7 +6,6 @@ interface SettingsContextData {
     toggleSettingsModal: () => void;
 }
 
-
 export const SettingsContext = createContext({} as SettingsContextData)
 
 interface SettingsProviderProps {
