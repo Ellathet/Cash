@@ -15,14 +15,14 @@ interface BadgesProviderProps {
 
 export function BadgesProvider ({children, ...rest}: BadgesProviderProps) {
 
-    const { Transactions, toggleModalAdd } = useContext(AddTransactionContext) 
+    const { Transactions, AddTransaction } = useContext(AddTransactionContext) 
 
     const [ transactionsTotal, setTransactionsTotal] = useState(rest.storageTransactionsTotal)
 
   useEffect(()=> {
         setTransactionsTotal((Number(Transactions.length) - Number(transactionsTotal)) + Number(transactionsTotal))
         Cookies.set("storageTransactionsTotal", transactionsTotal.toString())
-    }, [Transactions, transactionsTotal, toggleModalAdd]) 
+    }, [Transactions, AddTransaction]) 
 
     return (
         <BadgesContext.Provider value={{

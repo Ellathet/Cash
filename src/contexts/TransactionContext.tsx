@@ -87,7 +87,7 @@ export function AddTransactionProvider ({children,  ...rest}: AddTransactionProv
     useEffect(()=> {
         setTotal(totalTransactions())
         Cookies.set( "transactions", JSON.stringify(Transactions))
-    }, [Transactions, modalAdd, Confirm])
+    }, [Transactions, AddTransaction])
 
 
     const ConfirmFields = (transaction) => {
