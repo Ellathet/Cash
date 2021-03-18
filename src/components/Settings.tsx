@@ -46,6 +46,9 @@ export function Settings() {
                                         </div>
                                         <img className={styles.perfil} src="https://github.com/Ellathet.png" alt="thet"/>
                                     </div>    
+                                    <div>
+                                        Sair da conta
+                                    </div>
                                 </div>
                             </div>
                         ) : null}
