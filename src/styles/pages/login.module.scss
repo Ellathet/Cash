@@ -1,13 +1,13 @@
 .main {
-    position:fixed;
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
     background: var(--orange);
     z-index: -1;
 }
 
 .backgroundText{
-    position: relative;
+    position: fixed;
     left: -18rem;
     top: -35rem;
 }
@@ -29,7 +29,7 @@
 
 .buttons {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.7rem;
     margin-left: 1rem;
 }
 
