@@ -29,8 +29,6 @@ export default function Auto() {
             <p>Entre com algum dos serviços abaixo 
             <br/>para começar.</p>
         </span>
-
-        {!session &&
         <div className={styles.buttons}>
         <div className={styles.button} onClick={() => signIn()}>
             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 46.789 47.556">
@@ -53,17 +51,7 @@ export default function Auto() {
             </svg>
         </div>
         </div>
-        }
-        {session && 
-            <div className={styles.buttons}>
-                <h2>
-                    Você já está registrado! 
-                </h2>
-            </div>
-        }
-        
     </div>
     </>
     )
   }
-  
