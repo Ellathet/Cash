@@ -9,10 +9,12 @@ export function Settings() {
     const [ MenuTab , setMenuTab ] = useState("perfil")
     
     return (
-        <div className={styles.overlay}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="34.892" height="34.908" viewBox="0 0 34.892 34.908" onClick={toggleSettingsModal} className={styles.close}>
+        <>
+        <div className={styles.overlay} >
+            <svg xmlns="http://www.w3.org/2000/svg" width="34.892" height="34.908" viewBox="0 0 34.892 34.908" className={styles.close}>
                 <path id="Caminho_17" data-name="Caminho 17" d="M46.223,41.313,34.748,29.838,46.223,18.363A3.48,3.48,0,1,0,41.3,13.442L29.827,24.917,18.352,13.442a3.329,3.329,0,0,0-4.921,0,3.362,3.362,0,0,0,0,4.921L24.906,29.838,13.431,41.313a3.364,3.364,0,0,0,0,4.921,3.457,3.457,0,0,0,4.921,0L29.827,34.759,41.3,46.234a3.5,3.5,0,0,0,4.921,0A3.457,3.457,0,0,0,46.223,41.313Z" transform="translate(-12.359 -12.354)" fill="#9d9ea1"/>
             </svg>
+
             <div className={styles.modal}>
                 <div className={styles.content}>
                     <aside>
@@ -66,6 +68,7 @@ export function Settings() {
                 </div>
             </div>
         </div>
+        </>
     )
 
 }

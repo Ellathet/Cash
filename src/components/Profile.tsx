@@ -26,7 +26,7 @@ export function Profile(){
                             </svg>
                         </div>
                         <div>
-                            <strong>Yoda</strong>
+                            <strong>Faça o Login</strong>
                         </div>
                         </>
                     }
