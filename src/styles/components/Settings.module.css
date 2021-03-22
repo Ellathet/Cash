@@ -91,32 +91,6 @@
   transition: background 0.5s;
 }
 
-.perfilContent {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-}
-
-.perfilOptions {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.perfilContent img {
-  border-radius: 50%;
-  height: 12rem;
-  width: 12rem;
-}
-
 .activatedTab {
   border-left: 0.3rem solid var(--orange);
   color: var(--title);

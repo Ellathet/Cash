@@ -28,9 +28,7 @@
 
 .modal {
     background: var(--white);
-    border-radius: 1rem;
-
-    padding: 1rem 0rem;
+    border-radius: 0.5rem;
     
     height: 80%;
     min-height: 30rem;
@@ -60,6 +58,8 @@
     display: flex;
     flex-direction: column;
     border-right: 1px solid rgba(160, 160, 160, 0.295);
+
+    height: 100%;
 }
 
 .buttonStyle {
@@ -98,3 +98,18 @@
     background: var(--orange);
     color: var(--white)
 }   
+
+.content aside button:first-child {
+    border-radius: 0.5rem 0px 0px 0px;
+}
+
+.content aside button:last-child {
+    border-radius: 0rem 0px 0px 0.5rem;
+    /* background: var(--red); */
+    margin-top: 21.5rem;
+}
+
+.content aside button:last-child:hover {
+    color: var(--white);
+    background: var(--red);
+}

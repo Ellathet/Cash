@@ -1,0 +1,46 @@
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem;
+
+    width: 11rem;
+    height: 3.5rem;
+    border-radius: 0.5rem;
+
+    font-weight: 700;
+
+    transition: 0.5s;
+}
+
+.button:hover {
+    cursor: pointer;
+    color: var(--white)
+}
+
+.buttonLogOff{
+    border: var(--red) solid;
+    color: var(--red);
+}
+
+.buttonLogOff:hover {
+    background-color: var(--red);
+}
+
+.content{
+    margin-top: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonLogIn {
+    border: var(--green) solid;
+    color: var(--green);
+}
+
+.buttonLogIn:hover {
+    background-color: var(--green);
+    
+}
