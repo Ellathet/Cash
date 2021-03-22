@@ -19,14 +19,26 @@ export function Profile(){
                     </svg>
                     </div>
                     {!session && 
-                        <img className={styles.perfil} src="/image/default_perfil.jpg" alt="Foto de Perfil" onClick={()=> signIn("google")}/>
+                        <>
+                        <div className={`${styles.perfil} ${styles.perfilHover}`} onClick={()=> signIn("google")}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="31.5" viewBox="0 0 36 31.5">
+                                <path id="Icon_open-account-login" data-name="Icon open-account-login" d="M13.5,0V4.5h18V27h-18v4.5H36V0ZM18,9v4.5H0V18H18v4.5l9-6.75Z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Yoda</strong>
+                        </div>
+                        </>
                     }
                     {session &&
-                        <img className={styles.perfil} src={session?.user?.image} alt="Foto de Perfil" onClick={()=> signOut()}/>
+                    <>
+                        <img className={styles.perfil} src={session?.user?.image} alt="Foto de Perfil"/>
+                        <div>
+                            <strong>{session?.user?.name}</strong>
+                        </div>
+                    </>
                     }
-                <div>
-                <strong>{session?.user?.name}</strong>
-            </div>
+
         </div>
     )
 }

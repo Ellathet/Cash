@@ -18,6 +18,32 @@
     margin-left: 1.5rem;
 }
 
+.perfilHover {
+    background-color: var(--white);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.perfilHover svg {
+    position: relative;
+    left: -0.3rem;
+}
+
+.perfilHover svg path {
+    fill: var(--text);
+    transition: fill 0.5s;
+}
+
+.perfilHover:hover{
+    cursor: pointer;
+}
+
+.perfilHover:hover svg path {
+    fill: var(--orange)
+}
+
 .config{
 
     position: relative;
