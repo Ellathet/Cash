@@ -8,7 +8,7 @@ import { Account } from './Settings/Account';
 export function Settings() {
 
     const { toggleSettingsModal } = useContext(SettingsContext) 
-    const [ MenuTab , setMenuTab ] = useState("perfil")
+    const [ MenuTab , setMenuTab ] = useState("profile")
 
 
     return (
@@ -18,9 +18,9 @@ export function Settings() {
                 <div className={styles.content}>
                     <aside>
                         <button onClick={() => setMenuTab("profile")} 
-                        className={`${styles.buttonStyle} ${MenuTab === "perfil" ? styles.activatedTab: null}`}>Perfil</button>
+                        className={`${styles.buttonStyle} ${MenuTab === "profile" ? styles.activatedTab: null}`}>Perfil</button>
                         <button onClick={() => setMenuTab("account")} 
-                        className={`${styles.buttonStyle} ${MenuTab === "conta" ? styles.activatedTab: null}`}>Conta</button>
+                        className={`${styles.buttonStyle} ${MenuTab === "account" ? styles.activatedTab: null}`}>Conta</button>
                         <button onClick={() => setMenuTab("transactions")} 
                         className={`${styles.buttonStyle} ${MenuTab === "transactions" ? styles.activatedTab: null}`}>Transações</button>
                         <button onClick={() => setMenuTab("storage")} 
